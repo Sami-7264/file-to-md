@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# setup.sh — one-command install for File → Markdown.
+# setup.sh: one-command install for file-to-md.
 #
 # Creates a Python virtual environment, installs backend dependencies, and
 # installs frontend npm packages. Run from the project root:
@@ -38,7 +38,7 @@ info "Found Node $(node --version)"
 if command -v ffmpeg >/dev/null 2>&1; then
   info "Found ffmpeg (audio/video transcription enabled)"
 else
-  warn "ffmpeg not found — audio/video transcription will be disabled."
+  warn "ffmpeg not found, audio/video transcription will be disabled."
   warn "  macOS:  brew install ffmpeg"
   warn "  Ubuntu: sudo apt install ffmpeg"
 fi
@@ -46,7 +46,7 @@ fi
 if command -v tesseract >/dev/null 2>&1; then
   info "Found tesseract (image OCR enabled)"
 else
-  warn "tesseract not found — image OCR will be skipped."
+  warn "tesseract not found, image OCR will be skipped."
   warn "  macOS:  brew install tesseract"
   warn "  Ubuntu: sudo apt install tesseract-ocr"
 fi
@@ -79,15 +79,15 @@ npm install
 # ---------------------------------------------------------------------------
 # Done
 # ---------------------------------------------------------------------------
-bold "✅ Setup complete!"
+bold "Setup complete."
 cat <<'EOF'
 
 Run the app in two terminals:
 
-  Terminal 1 — backend:
+  Terminal 1, backend:
     cd backend && source .venv/bin/activate && uvicorn main:app --reload --port 8000
 
-  Terminal 2 — frontend:
+  Terminal 2, frontend:
     cd frontend && npm run dev
 
 Then open http://localhost:5173
