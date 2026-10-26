@@ -1,0 +1,19 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+aiofiles==24.1.0
+pydantic==2.10.4
+
+# --- Core conversion engine (all optional format handlers) ---
+markitdown[all]==0.1.6
+
+# --- Image: EXIF + OCR ---
+Pillow==11.1.0
+pytesseract==0.3.13
+
+# --- Audio / video: local Whisper transcription ---
+openai-whisper==20240930
+
+# --- YouTube transcript fallback ---
+yt-dlp==2024.12.13
